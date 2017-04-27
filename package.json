@@ -1,0 +1,23 @@
+{
+  "name": "hearthstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iSkylake/HearthStone.git"
+  },
+  "author": "Llorch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iSkylake/HearthStone/issues"
+  },
+  "homepage": "https://github.com/iSkylake/HearthStone#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
