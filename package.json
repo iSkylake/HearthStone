@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/iSkylake/HearthStone#readme",
   "dependencies": {
+    "create-react-class": "^15.5.2",
     "express": "^4.15.2",
     "path": "^0.12.7",
     "react": "^15.5.4",

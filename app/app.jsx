@@ -1,7 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const Main = require('Main');
 
 ReactDOM.render(
-	<h1>HearthStone</h1>,
+	<Main/>,
 	document.getElementById('app')
 );

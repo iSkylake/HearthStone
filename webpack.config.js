@@ -8,7 +8,7 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			Main: path.resolve(__dirname, 'app/components/Main.js')
+			Main: path.resolve(__dirname, 'app/components/Main.jsx')
 		},
 		extensions: ['*', '.js', '.jsx']
 	},
