@@ -13,6 +13,7 @@ module.exports = {
 			Home: path.resolve(__dirname, 'app/components/Home.jsx'),
 			Card: path.resolve(__dirname, 'app/components/Card.jsx'),
 			CardForm: path.resolve(__dirname, 'app/components/CardForm.jsx'),
+			CardDisplay: path.resolve(__dirname, 'app/components/CardDisplay.jsx'),
 			Random: path.resolve(__dirname, 'app/components/Random.jsx')
 		},
 		extensions: ['*', '.js', '.jsx']
