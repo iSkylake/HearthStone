@@ -11241,7 +11241,26 @@ var CardForm = __webpack_require__(101);
 var CardDisplay = __webpack_require__(100);
 
 var Card = createReactClass({
+	getDefaultProps: function getDefaultProps() {
+		return {
+			card: "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/1/1a/Card_back-Classic.png?version=81f089f507b8a300c71d9846fe1bb2d7"
+		};
+	},
+
+	getInitialState: function getInitialState() {
+		return {
+			card: this.props.card
+		};
+	},
+
+	handleSearch: function handleSearch(card) {
+		this.setState({
+			card: card
+		});
+	},
+
 	render: function render() {
+		var card = this.state.card;
 		return React.createElement(
 			'div',
 			null,
@@ -11250,8 +11269,8 @@ var Card = createReactClass({
 				null,
 				'Card'
 			),
-			React.createElement(CardDisplay, null),
-			React.createElement(CardForm, null)
+			React.createElement(CardDisplay, { card: card }),
+			React.createElement(CardForm, { onHandleSearch: this.handleSearch })
 		);
 	}
 });
@@ -11267,8 +11286,10 @@ module.exports = Card;
 
 var React = __webpack_require__(5);
 
-var CardDisplay = function CardDisplay(props) {
-	return React.createElement("img", { src: "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/5/5f/Leeroy_Jenkins%28674%29.png?version=c7aedfb960e57074001321560225c55f" });
+var CardDisplay = function CardDisplay(_ref) {
+	var card = _ref.card;
+
+	return React.createElement('img', { src: card });
 };
 
 module.exports = CardDisplay;
@@ -11284,11 +11305,30 @@ var React = __webpack_require__(5);
 var createReactClass = __webpack_require__(61);
 
 var CardFrom = createReactClass({
+	onClickSubmit: function onClickSubmit(e) {
+		e.preventDefault();
+		var cardName = this.refs.cardName.value;
+		var cards = {
+			"Leeroy Jenkins": "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/5/5f/Leeroy_Jenkins%28674%29.png?version=c7aedfb960e57074001321560225c55f",
+			"Malygos": "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/7/7c/Malygos%28241%29.png?version=f8f0fd203669ed9e6e433dd5dc362f25",
+			"Bloodmage Thalnos": "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/c/cd/Bloodmage_Thalnos%28525%29.png?version=8f1294225adb7ad46a4ddae219b792ff",
+			"Ragnaros the Firelord": "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/4/47/Ragnaros_the_Firelord%28503%29.png?version=9a57c14aa96cfecb9620b2fd95ec7b52"
+		};
+
+		if (cardName.length > 0) {
+			this.refs.cardName.value = '';
+			if (cardName in cards) {
+				this.props.onHandleSearch(cards[cardName]);
+			} else {
+				alert('Card not found');
+			}
+		}
+	},
 	render: function render() {
 		return React.createElement(
 			'form',
-			null,
-			React.createElement('input', { type: 'text', placeholder: 'Card Name' }),
+			{ onSubmit: this.onClickSubmit },
+			React.createElement('input', { ref: 'cardName', type: 'text', placeholder: 'Card Name' }),
 			React.createElement(
 				'button',
 				null,
