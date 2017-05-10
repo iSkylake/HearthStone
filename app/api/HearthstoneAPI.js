@@ -11,7 +11,12 @@ module.exports = {
 		return axios.get(requestUrl, {
 			headers: {"X-Mashape-Key": API_KEY}
 		}).then(function(res){
-			return res.data[0].img;
+			console.log(res.data);
+			for(let i=0; i<res.data.length; i++){
+				if("img" in res.data[i]){
+					return res.data[i].img;
+				}
+			}
 		}).catch(function(err){
 			throw new Error(err);
 		});
