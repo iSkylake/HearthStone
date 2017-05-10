@@ -11209,8 +11209,7 @@ var Main = function Main(props) {
 			React.createElement(
 				Switch,
 				null,
-				React.createElement(Route, { exact: true, path: '/', component: Home }),
-				React.createElement(Route, { path: '/card', component: Card }),
+				React.createElement(Route, { exact: true, path: '/', component: Card }),
 				React.createElement(Route, { path: '/random', component: Random })
 			)
 		)
@@ -11396,7 +11395,7 @@ var Nav = function Nav(props) {
 				null,
 				React.createElement(
 					Link,
-					{ to: '/card' },
+					{ to: '/' },
 					'Get Card'
 				)
 			),

@@ -11,8 +11,7 @@ const Main = props => {
 			<Nav/>
 			<div className="main-container">
 				<Switch>
-					<Route exact path='/' component={Home}/>
-					<Route path='/card' component={Card}/>
+					<Route exact path='/' component={Card}/>
 					<Route path='/random' component={Random}/>
 				</Switch>
 			</div>
