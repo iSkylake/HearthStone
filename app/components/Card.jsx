@@ -25,8 +25,8 @@ const Card = createReactClass({
 	render: function(){
 		let card = this.state.card;
 		return(
-			<div>
-				<h1>Card</h1>
+			<div className="search-container">
+				<h1>Card Search</h1>
 				<CardDisplay card={card}/>
 				<CardForm onHandleSearch={this.handleSearch}/>
 			</div>

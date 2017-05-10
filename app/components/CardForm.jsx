@@ -25,7 +25,7 @@ const CardFrom = createReactClass({
 	},
 	render: function(){
 		return (
-			<form onSubmit={this.onClickSubmit}>
+			<form onSubmit={this.onClickSubmit} className="search-form">
 				<input ref="cardName" type="text" placeholder="Card Name"/>
 				<button>Get Card</button>
 			</form>

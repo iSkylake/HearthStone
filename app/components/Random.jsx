@@ -25,7 +25,8 @@ const Random = createReactClass({
 	render: function(){
 		let randomCard = this.state.randomCard;
 		return (
-			<div>
+			<div className="random-container">
+				<h1>Card Generator</h1>
 				<CardDisplay card={randomCard}/>
 				<RandomForm onHandleCardGen={this.handleCardGen}/>
 			</div>

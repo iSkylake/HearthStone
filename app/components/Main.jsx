@@ -9,11 +9,13 @@ const Main = props => {
 	return(
 		<div>
 			<Nav/>
-			<Switch>
-				<Route exact path='/' component={Home}/>
-				<Route exact path='/card' component={Card}/>
-				<Route exact path='/random' component={Random}/>
-			</Switch>
+			<div className="main-container">
+				<Switch>
+					<Route exact path='/' component={Home}/>
+					<Route path='/card' component={Card}/>
+					<Route path='/random' component={Random}/>
+				</Switch>
+			</div>
 		</div>
 	);	
 }

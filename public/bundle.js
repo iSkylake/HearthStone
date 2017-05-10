@@ -11204,11 +11204,15 @@ var Main = function Main(props) {
 		null,
 		React.createElement(Nav, null),
 		React.createElement(
-			Switch,
-			null,
-			React.createElement(Route, { exact: true, path: '/', component: Home }),
-			React.createElement(Route, { exact: true, path: '/card', component: Card }),
-			React.createElement(Route, { exact: true, path: '/random', component: Random })
+			'div',
+			{ className: 'main-container' },
+			React.createElement(
+				Switch,
+				null,
+				React.createElement(Route, { exact: true, path: '/', component: Home }),
+				React.createElement(Route, { path: '/card', component: Card }),
+				React.createElement(Route, { path: '/random', component: Random })
+			)
 		)
 	);
 };
@@ -11280,11 +11284,11 @@ var Card = createReactClass({
 		var card = this.state.card;
 		return React.createElement(
 			'div',
-			null,
+			{ className: 'search-container' },
 			React.createElement(
 				'h1',
 				null,
-				'Card'
+				'Card Search'
 			),
 			React.createElement(CardDisplay, { card: card }),
 			React.createElement(CardForm, { onHandleSearch: this.handleSearch })
@@ -11327,7 +11331,7 @@ var CardFrom = createReactClass({
 	render: function render() {
 		return React.createElement(
 			'form',
-			{ onSubmit: this.onClickSubmit },
+			{ onSubmit: this.onClickSubmit, className: 'search-form' },
 			React.createElement('input', { ref: 'cardName', type: 'text', placeholder: 'Card Name' }),
 			React.createElement(
 				'button',
@@ -11446,7 +11450,12 @@ var Random = createReactClass({
 		var randomCard = this.state.randomCard;
 		return React.createElement(
 			'div',
-			null,
+			{ className: 'random-container' },
+			React.createElement(
+				'h1',
+				null,
+				'Card Generator'
+			),
 			React.createElement(CardDisplay, { card: randomCard }),
 			React.createElement(RandomForm, { onHandleCardGen: this.handleCardGen })
 		);
