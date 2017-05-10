@@ -2,7 +2,7 @@ const React = require('react');
 const {Switch, Route} = require('react-router-dom');
 const Nav = require('Nav');
 const Home = require('Home');
-const Card = require('Card');
+const Search = require('Search');
 const Random = require('Random');
 
 const Main = props => {
@@ -11,7 +11,7 @@ const Main = props => {
 			<Nav/>
 			<div className="main-container">
 				<Switch>
-					<Route exact path='/' component={Card}/>
+					<Route exact path='/' component={Search}/>
 					<Route path='/random' component={Random}/>
 				</Switch>
 			</div>

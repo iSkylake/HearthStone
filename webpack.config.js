@@ -11,11 +11,12 @@ module.exports = {
 			Main: path.resolve(__dirname, 'app/components/Main.jsx'),
 			Nav: path.resolve(__dirname, 'app/components/Nav.jsx'),
 			Home: path.resolve(__dirname, 'app/components/Home.jsx'),
-			Card: path.resolve(__dirname, 'app/components/Card.jsx'),
-			CardForm: path.resolve(__dirname, 'app/components/CardForm.jsx'),
+			Search: path.resolve(__dirname, 'app/components/Search.jsx'),
+			SearchForm: path.resolve(__dirname, 'app/components/SearchForm.jsx'),
 			CardDisplay: path.resolve(__dirname, 'app/components/CardDisplay.jsx'),
 			Random: path.resolve(__dirname, 'app/components/Random.jsx'),
-			RandomForm: path.resolve(__dirname, 'app/components/RandomForm.jsx')
+			RandomForm: path.resolve(__dirname, 'app/components/RandomForm.jsx'),
+			HearthstoneAPI: path.resolve(__dirname, 'app/api/HearthstoneAPI.js')
 		},
 		extensions: ['*', '.js', '.jsx']
 	},
