@@ -12,12 +12,19 @@ module.exports = {
 		return axios.get(requestUrl, {
 			headers: {"X-Mashape-Key": API_KEY}
 		}).then(function(res){
-			// console.log(res.data);
-			for(let i=0; i<res.data.length; i++){
-				if("img" in res.data[i]){
-					return res.data[i].img;
-				}
+			let i = 0;
+			if(res.data.length > 1){
+				do{
+					i = Math.floor(Math.random()*res.data.length);
+				}while(!("img" in res.data[i]));
 			}
+			return res.data[i].img;
+			// console.log(res.data.length);
+			// for(let i=0; i<res.data.length; i++){
+			// 	if("img" in res.data[i]){
+			// 		return res.data[i].img;
+			// 	}
+			// }
 		}).catch(function(err){
 			throw new Error(err);
 		});
