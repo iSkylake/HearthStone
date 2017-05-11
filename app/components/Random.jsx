@@ -2,6 +2,7 @@ const React = require('react');
 const createReactClass = require('create-react-class');
 const CardDisplay = require('CardDisplay');
 const RandomForm = require('RandomForm');
+const HearthstoneApiRequest = require('HearthstoneAPI');
 
 const Random = createReactClass({
 	getDefaultProps: function(){
@@ -17,9 +18,17 @@ const Random = createReactClass({
 	},
 
 	handleCardGen: function(generatedCard){
-		this.setState({
-			randomCard: generatedCard
+		let that = this;
+		HearthstoneApiRequest.getRandomCard().then(function(randomCard){
+			that.setState({
+				randomCard: randomCard
+			});
+		}, function(err){
+			alert(err);
 		});
+		// this.setState({
+		// 	randomCard: generatedCard
+		// });
 	},
 
 	render: function(){

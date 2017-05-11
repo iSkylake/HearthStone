@@ -21,7 +21,7 @@ const Search = createReactClass({
 		// this.setState({
 		// 	card: card
 		// });
-		var that = this;
+		let that = this;
 		HearthstoneApiRequest.getCard(cardName).then(function(card){
 			that.setState({
 				card: card

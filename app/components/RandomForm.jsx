@@ -13,8 +13,9 @@ const RandomForm = createReactClass({
 			"https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/8/86/Primordial_Drake%2855533%29.png?version=8025fa09c544411ebf98df456506a580",
 			"https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/5/57/Eviscerate%28382%29.png?version=5a9947e57ea4c0a693536673b16fda76"
 		];
-		let i = Math.floor(Math.random()*cards.length);
-		this.props.onHandleCardGen(cards[i]);
+		// let i = Math.floor(Math.random()*cards.length);
+		// this.props.onHandleCardGen(cards[i]);
+		this.props.onHandleCardGen();
 	},
 
 	render: function(){
