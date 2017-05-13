@@ -40,7 +40,6 @@ nav ul li a, nav ul li p{
 h1{
 	margin: 0 auto;
 	color: #472506;
-	margin-bottom: 10px;
 }
 
 #app{
@@ -87,9 +86,13 @@ form button{
 	margin-top: 10px;
 }
 
-.loading-gif{
-	margin-left: -170px;
+.loading-on{
+	margin-left: -200px;
 	margin-bottom: 150px;
 	width: 100px;
 	height: 100px;
+}
+
+.loading-off{
+	display: none;
 }

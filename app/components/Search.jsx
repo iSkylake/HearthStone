@@ -7,12 +7,13 @@ const HearthstoneApiRequest = require('HearthstoneAPI');
 const Search = createReactClass({
 	getDefaultProps: function(){
 		return{
-			card: "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/1/1a/Card_back-Classic.png?version=81f089f507b8a300c71d9846fe1bb2d7"
+			card: "http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png"
 		}
 	},
 
 	getInitialState: function(){
 		return{
+			isLoading: false,
 			card: this.props.card
 		}
 	},
@@ -22,21 +23,44 @@ const Search = createReactClass({
 		// 	card: card
 		// });
 		let that = this;
+
+		this.setState({
+			isLoading: true
+		});
+
 		HearthstoneApiRequest.getCard(cardName).then(function(card){
 			that.setState({
-				card: card
+				card: card,
+				isLoading: false
 			});
 		}, function(err){
+			that.setState({
+				isLoading: false
+			});
 			alert(err);		
 		});
 	},
 
 	render: function(){
 		let card = this.state.card;
+		let isLoading = this.state.isLoading;
+		let loadingGif = "";
+
+		function renderCard(){
+			if(isLoading){
+				loadingGif = "loading-on";
+				console.log(loadingGif);
+			} else {
+				loadingGif = "loading-off"
+			}
+			return <CardDisplay card={card} loadingGif={loadingGif}/>
+		}
+
 		return(
 			<div className="search-container">
 				<h1>Search Card</h1>
-				<CardDisplay card={card}/>
+				{/*<CardDisplay card={card}/>*/}
+				{renderCard()}
 				<SearchForm onHandleSearch={this.handleSearch}/>
 			</div>
 		);

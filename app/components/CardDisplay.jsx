@@ -1,10 +1,10 @@
 const React = require('react');
 
-const CardDisplay = ({card}) => {
+const CardDisplay = ({card, loadingGif}) => {
 	return(
 		<div className="card-display">
 			<img src={card}/>
-			{/*<img className="loading-gif" src="https://bottlevoice.com/ja/images/loading256.gif"/>*/}
+			<img className={loadingGif} src="http://www.khalilicollections.org/wp-content/themes/bateaux/ajax-loader.gif"/>
 		</div>
 	);
 }

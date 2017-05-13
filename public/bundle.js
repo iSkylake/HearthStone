@@ -7955,12 +7955,14 @@ module.exports = {
 var React = __webpack_require__(5);
 
 var CardDisplay = function CardDisplay(_ref) {
-	var card = _ref.card;
+	var card = _ref.card,
+	    loadingGif = _ref.loadingGif;
 
 	return React.createElement(
 		"div",
 		{ className: "card-display" },
-		React.createElement("img", { src: card })
+		React.createElement("img", { src: card }),
+		React.createElement("img", { className: loadingGif, src: "http://www.khalilicollections.org/wp-content/themes/bateaux/ajax-loader.gif" })
 	);
 };
 
@@ -12170,12 +12172,13 @@ var HearthstoneApiRequest = __webpack_require__(64);
 var Search = createReactClass({
 	getDefaultProps: function getDefaultProps() {
 		return {
-			card: "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/1/1a/Card_back-Classic.png?version=81f089f507b8a300c71d9846fe1bb2d7"
+			card: "http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png"
 		};
 	},
 
 	getInitialState: function getInitialState() {
 		return {
+			isLoading: false,
 			card: this.props.card
 		};
 	},
@@ -12185,17 +12188,39 @@ var Search = createReactClass({
 		// 	card: card
 		// });
 		var that = this;
+
+		this.setState({
+			isLoading: true
+		});
+
 		HearthstoneApiRequest.getCard(cardName).then(function (card) {
 			that.setState({
-				card: card
+				card: card,
+				isLoading: false
 			});
 		}, function (err) {
+			that.setState({
+				isLoading: false
+			});
 			alert(err);
 		});
 	},
 
 	render: function render() {
 		var card = this.state.card;
+		var isLoading = this.state.isLoading;
+		var loadingGif = "";
+
+		function renderCard() {
+			if (isLoading) {
+				loadingGif = "loading-on";
+				console.log(loadingGif);
+			} else {
+				loadingGif = "loading-off";
+			}
+			return React.createElement(CardDisplay, { card: card, loadingGif: loadingGif });
+		}
+
 		return React.createElement(
 			'div',
 			{ className: 'search-container' },
@@ -12204,7 +12229,7 @@ var Search = createReactClass({
 				null,
 				'Search Card'
 			),
-			React.createElement(CardDisplay, { card: card }),
+			renderCard(),
 			React.createElement(SearchForm, { onHandleSearch: this.handleSearch })
 		);
 	}
