@@ -12080,23 +12080,31 @@ var HearthstoneApiRequest = __webpack_require__(64);
 var Random = createReactClass({
 	getDefaultProps: function getDefaultProps() {
 		return {
-			randomCard: "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/1/1a/Card_back-Classic.png?version=81f089f507b8a300c71d9846fe1bb2d7"
+			randomCard: "http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png"
 		};
 	},
 
 	getInitialState: function getInitialState() {
 		return {
-			randomCard: this.props.randomCard
+			randomCard: this.props.randomCard,
+			isLoading: false
 		};
 	},
 
 	handleCardGen: function handleCardGen(generatedCard) {
 		var that = this;
+		this.setState({
+			isLoading: true
+		});
 		HearthstoneApiRequest.getRandomCard().then(function (randomCard) {
 			that.setState({
-				randomCard: randomCard
+				randomCard: randomCard,
+				isLoading: false
 			});
 		}, function (err) {
+			that.setState({
+				isLoading: false
+			});
 			alert(err);
 		});
 		// this.setState({
@@ -12106,6 +12114,18 @@ var Random = createReactClass({
 
 	render: function render() {
 		var randomCard = this.state.randomCard;
+		var isLoading = this.state.isLoading;
+
+		function renderCard() {
+			var loadingGif = "";
+			if (isLoading) {
+				loadingGif = "loading-on";
+			} else {
+				loadingGif = "loading-off";
+			}
+			return React.createElement(CardDisplay, { card: randomCard, loadingGif: loadingGif });
+		}
+
 		return React.createElement(
 			'div',
 			{ className: 'random-container' },
@@ -12114,7 +12134,7 @@ var Random = createReactClass({
 				null,
 				'Random Card'
 			),
-			React.createElement(CardDisplay, { card: randomCard }),
+			renderCard(),
 			React.createElement(RandomForm, { onHandleCardGen: this.handleCardGen })
 		);
 	}

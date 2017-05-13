@@ -7,23 +7,31 @@ const HearthstoneApiRequest = require('HearthstoneAPI');
 const Random = createReactClass({
 	getDefaultProps: function(){
 		return{
-			randomCard: "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/1/1a/Card_back-Classic.png?version=81f089f507b8a300c71d9846fe1bb2d7"
+			randomCard: "http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png"
 		};
 	},
 
 	getInitialState: function(){
 		return{
-			randomCard: this.props.randomCard
+			randomCard: this.props.randomCard,
+			isLoading: false
 		}
 	},
 
 	handleCardGen: function(generatedCard){
 		let that = this;
+		this.setState({
+			isLoading: true
+		});
 		HearthstoneApiRequest.getRandomCard().then(function(randomCard){
 			that.setState({
-				randomCard: randomCard
+				randomCard: randomCard,
+				isLoading: false
 			});
 		}, function(err){
+			that.setState({
+				isLoading: false
+			});
 			alert(err);
 		});
 		// this.setState({
@@ -33,10 +41,22 @@ const Random = createReactClass({
 
 	render: function(){
 		let randomCard = this.state.randomCard;
+		let isLoading = this.state.isLoading;
+
+		function renderCard(){
+			let loadingGif = "";
+			if(isLoading){
+				loadingGif = "loading-on";
+			} else {
+				loadingGif = "loading-off";
+			}
+			return <CardDisplay card={randomCard} loadingGif={loadingGif}/>
+		}
+
 		return (
 			<div className="random-container">
 				<h1>Random Card</h1>
-				<CardDisplay card={randomCard}/>
+				{renderCard()}
 				<RandomForm onHandleCardGen={this.handleCardGen}/>
 			</div>
 		);
