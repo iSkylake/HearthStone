@@ -19,12 +19,14 @@ module.exports = {
 				}while(!("img" in res.data[i]));
 			}
 			return res.data[i].img;
-			// console.log(res.data.length);
+			// let cards = [];
 			// for(let i=0; i<res.data.length; i++){
 			// 	if("img" in res.data[i]){
-			// 		return res.data[i].img;
+			// 		cards.push(res.data[i].img);
 			// 	}
 			// }
+			// console.log(cards);
+			// return cards;
 		}).catch(function(err){
 			throw new Error(err);
 		});

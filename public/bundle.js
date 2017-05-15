@@ -7934,12 +7934,14 @@ module.exports = {
 				} while (!("img" in res.data[i]));
 			}
 			return res.data[i].img;
-			// console.log(res.data.length);
+			// let cards = [];
 			// for(let i=0; i<res.data.length; i++){
 			// 	if("img" in res.data[i]){
-			// 		return res.data[i].img;
+			// 		cards.push(res.data[i].img);
 			// 	}
 			// }
+			// console.log(cards);
+			// return cards;
 		}).catch(function (err) {
 			throw new Error(err);
 		});
@@ -7982,7 +7984,7 @@ var CardDisplay = function CardDisplay(_ref) {
 		"div",
 		{ className: "card-display" },
 		React.createElement("img", { src: card }),
-		React.createElement("img", { className: loadingGif, src: "http://www.khalilicollections.org/wp-content/themes/bateaux/ajax-loader.gif" })
+		React.createElement("img", { className: loadingGif, src: __webpack_require__(264) })
 	);
 };
 
@@ -30541,6 +30543,12 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
+
+/***/ }),
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "6e5d6096c02e8c18ad95d40ae5bf0089.gif";
 
 /***/ })
 /******/ ]);

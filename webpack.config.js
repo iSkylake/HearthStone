@@ -29,6 +29,10 @@ module.exports = {
 					},
 					test: /\.jsx?$/,
 					exclude: path.resolve(__dirname, '/node_modules')
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				loader: 'url-loader?limit=25000'
 			}
 		]
 	}
