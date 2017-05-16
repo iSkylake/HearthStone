@@ -1,5 +1,5 @@
 const axios = require('axios');
-const API_KEY = require('./apiKey.js')
+const API_KEY = require('./apiKey.js');
 
 const GET_CARD_API = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/search/";
 const RANDOM_CARD_API = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/"
@@ -44,7 +44,7 @@ module.exports = {
 			do{
 				j = Math.floor(Math.random()*res.data.length);
 			}while(!("img" in res.data[j]));
-			console.log(res.data[j]);
+			// console.log(res.data[j]);
 			return res.data[j].img;
 		}).catch(function(err){
 			throw new Error(err)

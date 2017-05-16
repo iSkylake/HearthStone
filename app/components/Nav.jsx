@@ -1,5 +1,5 @@
-const React = require('react');
-const {Link} = require('react-router-dom');
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Nav = props =>{
 	return(
@@ -13,4 +13,4 @@ const Nav = props =>{
 	);
 };
 
-module.exports = Nav;
+export default Nav;

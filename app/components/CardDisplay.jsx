@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 const CardDisplay = ({card, loadingGif}) => {
 	return(
@@ -9,4 +9,4 @@ const CardDisplay = ({card, loadingGif}) => {
 	);
 }
 
-module.exports = CardDisplay;
+export default CardDisplay;

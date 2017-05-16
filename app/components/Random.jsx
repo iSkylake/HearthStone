@@ -1,8 +1,8 @@
-const React = require('react');
-const createReactClass = require('create-react-class');
-const CardDisplay = require('CardDisplay');
-const RandomForm = require('RandomForm');
-const HearthstoneApiRequest = require('HearthstoneAPI');
+import React from 'react';
+import createReactClass from 'create-react-class';
+import CardDisplay from 'CardDisplay';
+import RandomForm from 'RandomForm';
+import HearthstoneApiRequest from 'HearthstoneAPI';
 
 const Random = createReactClass({
 	getDefaultProps: function(){
@@ -63,4 +63,4 @@ const Random = createReactClass({
 	}
 });
 
-module.exports = Random;
+export default Random;

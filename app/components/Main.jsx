@@ -1,9 +1,9 @@
-const React = require('react');
-const {Switch, Route} = require('react-router-dom');
-const Nav = require('Nav');
-const Home = require('Home');
-const Search = require('Search');
-const Random = require('Random');
+import React from 'react';
+import {Switch, Route} from 'react-router-dom';
+import Nav from 'Nav';
+import Home from 'Home';
+import Search from 'Search';
+import Random from 'Random';
 
 const Main = props => {
 	return(
@@ -19,4 +19,4 @@ const Main = props => {
 	);	
 }
 
-module.exports = Main;
+export default Main;

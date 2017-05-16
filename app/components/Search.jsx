@@ -1,8 +1,8 @@
-const React = require('react');
-const createReactClass = require('create-react-class');
-const SearchForm = require('SearchForm')
-const CardDisplay = require('CardDisplay');
-const HearthstoneApiRequest = require('HearthstoneAPI');
+import React from 'react';
+import createReactClass from 'create-react-class';
+import SearchForm from 'SearchForm';
+import CardDisplay from 'CardDisplay';
+import HearthstoneApiRequest from 'HearthstoneAPI';
 
 const Search = createReactClass({
 	getDefaultProps: function(){
@@ -67,4 +67,4 @@ const Search = createReactClass({
 	}
 });
 
-module.exports = Search;
+export default Search;

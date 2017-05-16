@@ -7959,7 +7959,7 @@ module.exports = {
 			do {
 				j = Math.floor(Math.random() * res.data.length);
 			} while (!("img" in res.data[j]));
-			console.log(res.data[j]);
+			// console.log(res.data[j]);
 			return res.data[j].img;
 		}).catch(function (err) {
 			throw new Error(err);
@@ -7974,21 +7974,29 @@ module.exports = {
 "use strict";
 
 
-var React = __webpack_require__(5);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CardDisplay = function CardDisplay(_ref) {
 	var card = _ref.card,
 	    loadingGif = _ref.loadingGif;
 
-	return React.createElement(
+	return _react2.default.createElement(
 		"div",
 		{ className: "card-display" },
-		React.createElement("img", { src: card }),
-		React.createElement("img", { className: loadingGif, src: __webpack_require__(264) })
+		_react2.default.createElement("img", { src: card }),
+		_react2.default.createElement("img", { className: loadingGif, src: __webpack_require__(264) })
 	);
 };
 
-module.exports = CardDisplay;
+exports.default = CardDisplay;
 
 /***/ }),
 /* 67 */
@@ -11951,36 +11959,53 @@ module.exports = getIteratorFn;
 "use strict";
 
 
-var React = __webpack_require__(5);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var _require = __webpack_require__(40),
-    Switch = _require.Switch,
-    Route = _require.Route;
+var _react = __webpack_require__(5);
 
-var Nav = __webpack_require__(110);
-var Home = __webpack_require__(109);
-var Search = __webpack_require__(113);
-var Random = __webpack_require__(111);
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(40);
+
+var _Nav = __webpack_require__(110);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _Home = __webpack_require__(109);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _Search = __webpack_require__(113);
+
+var _Search2 = _interopRequireDefault(_Search);
+
+var _Random = __webpack_require__(111);
+
+var _Random2 = _interopRequireDefault(_Random);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Main = function Main(props) {
-	return React.createElement(
+	return _react2.default.createElement(
 		'div',
 		null,
-		React.createElement(Nav, null),
-		React.createElement(
+		_react2.default.createElement(_Nav2.default, null),
+		_react2.default.createElement(
 			'div',
 			{ className: 'main-container' },
-			React.createElement(
-				Switch,
+			_react2.default.createElement(
+				_reactRouterDom.Switch,
 				null,
-				React.createElement(Route, { exact: true, path: '/', component: Search }),
-				React.createElement(Route, { path: '/random', component: Random })
+				_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Search2.default }),
+				_react2.default.createElement(_reactRouterDom.Route, { path: '/random', component: _Random2.default })
 			)
 		)
 	);
 };
 
-module.exports = Main;
+exports.default = Main;
 
 /***/ }),
 /* 106 */
@@ -12009,18 +12034,26 @@ module.exports = API_KEY;
 "use strict";
 
 
-var React = __webpack_require__(5);
-var ReactDOM = __webpack_require__(106);
+var _react = __webpack_require__(5);
 
-var _require = __webpack_require__(40),
-    BrowserRouter = _require.BrowserRouter;
+var _react2 = _interopRequireDefault(_react);
 
-var Main = __webpack_require__(105);
+var _reactDom = __webpack_require__(106);
 
-ReactDOM.render(React.createElement(
-	BrowserRouter,
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactRouterDom = __webpack_require__(40);
+
+var _Main = __webpack_require__(105);
+
+var _Main2 = _interopRequireDefault(_Main);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(
+	_reactRouterDom.BrowserRouter,
 	null,
-	React.createElement(Main, null)
+	_react2.default.createElement(_Main2.default, null)
 ), document.getElementById('app'));
 
 /***/ }),
@@ -12030,17 +12063,25 @@ ReactDOM.render(React.createElement(
 "use strict";
 
 
-var React = __webpack_require__(5);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
-	return React.createElement(
+	return _react2.default.createElement(
 		'h1',
 		null,
 		'Home'
 	);
 };
 
-module.exports = Home;
+exports.default = Home;
 
 /***/ }),
 /* 110 */
@@ -12049,41 +12090,48 @@ module.exports = Home;
 "use strict";
 
 
-var React = __webpack_require__(5);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var _require = __webpack_require__(40),
-    Link = _require.Link;
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(40);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Nav = function Nav(props) {
-	return React.createElement(
+	return _react2.default.createElement(
 		'nav',
 		null,
-		React.createElement(
+		_react2.default.createElement(
 			'ul',
 			null,
-			React.createElement(
+			_react2.default.createElement(
 				'li',
 				null,
-				React.createElement(
+				_react2.default.createElement(
 					'p',
 					null,
 					'HearthStone'
 				)
 			),
-			React.createElement(
+			_react2.default.createElement(
 				'li',
 				null,
-				React.createElement(
-					Link,
+				_react2.default.createElement(
+					_reactRouterDom.Link,
 					{ to: '/' },
 					'Search'
 				)
 			),
-			React.createElement(
+			_react2.default.createElement(
 				'li',
 				null,
-				React.createElement(
-					Link,
+				_react2.default.createElement(
+					_reactRouterDom.Link,
 					{ to: 'random' },
 					'Random'
 				)
@@ -12092,7 +12140,7 @@ var Nav = function Nav(props) {
 	);
 };
 
-module.exports = Nav;
+exports.default = Nav;
 
 /***/ }),
 /* 111 */
@@ -12101,13 +12149,33 @@ module.exports = Nav;
 "use strict";
 
 
-var React = __webpack_require__(5);
-var createReactClass = __webpack_require__(31);
-var CardDisplay = __webpack_require__(66);
-var RandomForm = __webpack_require__(112);
-var HearthstoneApiRequest = __webpack_require__(65);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var Random = createReactClass({
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createReactClass = __webpack_require__(31);
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+var _CardDisplay = __webpack_require__(66);
+
+var _CardDisplay2 = _interopRequireDefault(_CardDisplay);
+
+var _RandomForm = __webpack_require__(112);
+
+var _RandomForm2 = _interopRequireDefault(_RandomForm);
+
+var _HearthstoneAPI = __webpack_require__(65);
+
+var _HearthstoneAPI2 = _interopRequireDefault(_HearthstoneAPI);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Random = (0, _createReactClass2.default)({
 	getDefaultProps: function getDefaultProps() {
 		return {
 			randomCard: "http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png"
@@ -12126,7 +12194,7 @@ var Random = createReactClass({
 		this.setState({
 			isLoading: true
 		});
-		HearthstoneApiRequest.getRandomCard().then(function (randomCard) {
+		_HearthstoneAPI2.default.getRandomCard().then(function (randomCard) {
 			that.setState({
 				randomCard: randomCard,
 				isLoading: false
@@ -12153,24 +12221,24 @@ var Random = createReactClass({
 			} else {
 				loadingGif = "loading-off";
 			}
-			return React.createElement(CardDisplay, { card: randomCard, loadingGif: loadingGif });
+			return _react2.default.createElement(_CardDisplay2.default, { card: randomCard, loadingGif: loadingGif });
 		}
 
-		return React.createElement(
+		return _react2.default.createElement(
 			'div',
 			{ className: 'random-container' },
-			React.createElement(
+			_react2.default.createElement(
 				'h1',
 				null,
 				'Random Card'
 			),
 			renderCard(),
-			React.createElement(RandomForm, { onHandleCardGen: this.handleCardGen })
+			_react2.default.createElement(_RandomForm2.default, { onHandleCardGen: this.handleCardGen })
 		);
 	}
 });
 
-module.exports = Random;
+exports.default = Random;
 
 /***/ }),
 /* 112 */
@@ -12179,10 +12247,21 @@ module.exports = Random;
 "use strict";
 
 
-var React = __webpack_require__(5);
-var createReactClass = __webpack_require__(31);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var RandomForm = createReactClass({
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createReactClass = __webpack_require__(31);
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RandomForm = (0, _createReactClass2.default)({
 	onClickRandom: function onClickRandom(e) {
 		e.preventDefault();
 		var cards = ["https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/5/5f/Leeroy_Jenkins%28674%29.png?version=c7aedfb960e57074001321560225c55f", "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/7/7c/Malygos%28241%29.png?version=f8f0fd203669ed9e6e433dd5dc362f25", "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/c/cd/Bloodmage_Thalnos%28525%29.png?version=8f1294225adb7ad46a4ddae219b792ff", "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/4/47/Ragnaros_the_Firelord%28503%29.png?version=9a57c14aa96cfecb9620b2fd95ec7b52", "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/0/0e/Gadgetzan_Auctioneer%28131%29.png?version=6338fc833b5628fb5c54e1e23d99fc3e", "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/8/86/Primordial_Drake%2855533%29.png?version=8025fa09c544411ebf98df456506a580", "https://hydra-media.cursecdn.com/hearthstone.gamepedia.com/5/57/Eviscerate%28382%29.png?version=5a9947e57ea4c0a693536673b16fda76"];
@@ -12192,10 +12271,10 @@ var RandomForm = createReactClass({
 	},
 
 	render: function render() {
-		return React.createElement(
+		return _react2.default.createElement(
 			'form',
 			{ onSubmit: this.onClickRandom },
-			React.createElement(
+			_react2.default.createElement(
 				'button',
 				null,
 				'Generate Card'
@@ -12204,7 +12283,7 @@ var RandomForm = createReactClass({
 	}
 });
 
-module.exports = RandomForm;
+exports.default = RandomForm;
 
 /***/ }),
 /* 113 */
@@ -12213,13 +12292,33 @@ module.exports = RandomForm;
 "use strict";
 
 
-var React = __webpack_require__(5);
-var createReactClass = __webpack_require__(31);
-var SearchForm = __webpack_require__(114);
-var CardDisplay = __webpack_require__(66);
-var HearthstoneApiRequest = __webpack_require__(65);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var Search = createReactClass({
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createReactClass = __webpack_require__(31);
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+var _SearchForm = __webpack_require__(114);
+
+var _SearchForm2 = _interopRequireDefault(_SearchForm);
+
+var _CardDisplay = __webpack_require__(66);
+
+var _CardDisplay2 = _interopRequireDefault(_CardDisplay);
+
+var _HearthstoneAPI = __webpack_require__(65);
+
+var _HearthstoneAPI2 = _interopRequireDefault(_HearthstoneAPI);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Search = (0, _createReactClass2.default)({
 	getDefaultProps: function getDefaultProps() {
 		return {
 			card: "http://wow.zamimg.com/images/hearthstone/backs/original/Card_Back_Default.png"
@@ -12243,7 +12342,7 @@ var Search = createReactClass({
 			isLoading: true
 		});
 
-		HearthstoneApiRequest.getCard(cardName).then(function (card) {
+		_HearthstoneAPI2.default.getCard(cardName).then(function (card) {
 			that.setState({
 				card: card,
 				isLoading: false
@@ -12268,24 +12367,24 @@ var Search = createReactClass({
 			} else {
 				loadingGif = "loading-off";
 			}
-			return React.createElement(CardDisplay, { card: card, loadingGif: loadingGif });
+			return _react2.default.createElement(_CardDisplay2.default, { card: card, loadingGif: loadingGif });
 		}
 
-		return React.createElement(
+		return _react2.default.createElement(
 			'div',
 			{ className: 'search-container' },
-			React.createElement(
+			_react2.default.createElement(
 				'h1',
 				null,
 				'Search Card'
 			),
 			renderCard(),
-			React.createElement(SearchForm, { onHandleSearch: this.handleSearch })
+			_react2.default.createElement(_SearchForm2.default, { onHandleSearch: this.handleSearch })
 		);
 	}
 });
 
-module.exports = Search;
+exports.default = Search;
 
 /***/ }),
 /* 114 */
@@ -12294,10 +12393,21 @@ module.exports = Search;
 "use strict";
 
 
-var React = __webpack_require__(5);
-var createReactClass = __webpack_require__(31);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var SearchFrom = createReactClass({
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createReactClass = __webpack_require__(31);
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SearchFrom = (0, _createReactClass2.default)({
 	onClickSubmit: function onClickSubmit(e) {
 		e.preventDefault();
 		var cardName = this.refs.cardName.value;
@@ -12325,11 +12435,11 @@ var SearchFrom = createReactClass({
 		}
 	},
 	render: function render() {
-		return React.createElement(
+		return _react2.default.createElement(
 			'form',
 			{ onSubmit: this.onClickSubmit, className: 'search-form' },
-			React.createElement('input', { ref: 'cardName', type: 'search', placeholder: 'Card Name' }),
-			React.createElement(
+			_react2.default.createElement('input', { ref: 'cardName', type: 'search', placeholder: 'Card Name' }),
+			_react2.default.createElement(
 				'button',
 				null,
 				'Submit'
@@ -12338,7 +12448,7 @@ var SearchFrom = createReactClass({
 	}
 });
 
-module.exports = SearchFrom;
+exports.default = SearchFrom;
 
 /***/ }),
 /* 115 */

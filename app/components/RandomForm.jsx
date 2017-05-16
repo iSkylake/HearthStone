@@ -1,5 +1,5 @@
-const React = require('react');
-const createReactClass = require('create-react-class');
+import React from 'react';
+import createReactClass from 'create-react-class';
 
 const RandomForm = createReactClass({
 	onClickRandom: function(e){
@@ -27,4 +27,4 @@ const RandomForm = createReactClass({
 	}
 });
 
-module.exports = RandomForm;
+export default RandomForm;
