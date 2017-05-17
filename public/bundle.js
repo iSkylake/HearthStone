@@ -30658,7 +30658,7 @@ module.exports = g;
 /* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "6e5d6096c02e8c18ad95d40ae5bf0089.gif";
+module.exports = __webpack_require__.p + "/img/ajax-loader.gif";
 
 /***/ })
 /******/ ]);
