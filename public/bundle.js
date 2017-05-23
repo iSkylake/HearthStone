@@ -7982,6 +7982,10 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _ajaxLoader = __webpack_require__(264);
+
+var _ajaxLoader2 = _interopRequireDefault(_ajaxLoader);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CardDisplay = function CardDisplay(_ref) {
@@ -7992,7 +7996,7 @@ var CardDisplay = function CardDisplay(_ref) {
 		"div",
 		{ className: "card-display" },
 		_react2.default.createElement("img", { src: card }),
-		_react2.default.createElement("img", { className: loadingGif, src: __webpack_require__(264) })
+		_react2.default.createElement("img", { className: loadingGif, src: _ajaxLoader2.default })
 	);
 };
 
@@ -12333,22 +12337,24 @@ var Search = (0, _createReactClass2.default)({
 	},
 
 	handleSearch: function handleSearch(cardName) {
+		var _this = this;
+
 		// this.setState({
 		// 	card: card
 		// });
-		var that = this;
+		// let that = this;
 
 		this.setState({
 			isLoading: true
 		});
 
 		_HearthstoneAPI2.default.getCard(cardName).then(function (card) {
-			that.setState({
+			_this.setState({
 				card: card,
 				isLoading: false
 			});
 		}, function (err) {
-			that.setState({
+			_this.setState({
 				isLoading: false
 			});
 			alert(err);

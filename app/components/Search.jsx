@@ -22,19 +22,19 @@ const Search = createReactClass({
 		// this.setState({
 		// 	card: card
 		// });
-		let that = this;
+		// let that = this;
 
 		this.setState({
 			isLoading: true
 		});
 
-		HearthstoneApiRequest.getCard(cardName).then(function(card){
-			that.setState({
+		HearthstoneApiRequest.getCard(cardName).then((card)=>{
+			this.setState({
 				card: card,
 				isLoading: false
 			});
-		}, function(err){
-			that.setState({
+		}, (err)=>{
+			this.setState({
 				isLoading: false
 			});
 			alert(err);		
