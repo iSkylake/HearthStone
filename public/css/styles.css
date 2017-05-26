@@ -48,6 +48,10 @@ h1{
 	height: 100%;
 }
 
+#app div{
+	background-color: #ebd19e;
+}
+
 .main-container{
 	display: flex;
 	width: 100%;
