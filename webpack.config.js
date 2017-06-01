@@ -16,6 +16,7 @@ module.exports = {
 			CardDisplay: path.resolve(__dirname, 'app/components/CardDisplay.jsx'),
 			Random: path.resolve(__dirname, 'app/components/Random.jsx'),
 			RandomForm: path.resolve(__dirname, 'app/components/RandomForm.jsx'),
+			CardSet: path.resolve(__dirname, 'app/components/Set.jsx'),
 			HearthstoneAPI: path.resolve(__dirname, 'app/api/HearthstoneAPI.js')
 		},
 		extensions: ['*', '.js', '.jsx']

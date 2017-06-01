@@ -7,7 +7,8 @@ const Nav = props =>{
 			<ul>
 				<li><p>HearthStone</p></li>
 				<li><Link to='/'>Search</Link></li>
-				<li><Link to='random'>Random</Link></li>
+				<li><Link to='/random'>Random</Link></li>
+				<li><Link to='/set'>Set</Link></li>
 			</ul>
 		</nav>
 	);
