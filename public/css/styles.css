@@ -109,3 +109,19 @@ form button{
 #card-list li img{
 	width: 80%;
 }
+
+#set-list{
+	display: flex;
+	justify-content: space-around;
+	margin: 20px 0;
+}
+
+#set-list li button{
+	background-color: purple;
+	border: none;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 130%;
+	padding: 15px;
+}
