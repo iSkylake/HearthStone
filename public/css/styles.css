@@ -58,7 +58,7 @@ h1{
 	height: 100%;
 }
 
-.search-container, .random-container{
+.search-container, .random-container, .set-container{
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -99,4 +99,13 @@ form button{
 
 .loading-off{
 	display: none;
+}
+
+#card-list{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#card-list li img{
+	width: 80%;
 }
