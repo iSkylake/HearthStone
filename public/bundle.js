@@ -7918,6 +7918,7 @@ var API_KEY = __webpack_require__(107);
 
 var GET_CARD_API = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/search/";
 var RANDOM_CARD_API = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/";
+var SET_API = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/";
 
 module.exports = {
 	getCard: function getCard(cardName) {
@@ -7950,7 +7951,8 @@ module.exports = {
 	getRandomCard: function getRandomCard() {
 		var cardSet = ["Basic", "Classic", "Whispers of the Old Gods", "One Night in Karazhan", "Mean Streets of Gadgetzan", "Journey to Un'Goro"];
 		var i = Math.floor(Math.random() * cardSet.length);
-		var requestUrl = RANDOM_CARD_API + cardSet[i];
+		var encodedCardSet = encodeURI(cardSet[i]);
+		var requestUrl = RANDOM_CARD_API + encodedCardSet;
 
 		return axios.get(requestUrl, {
 			headers: { "X-Mashape-Key": API_KEY }
@@ -7959,8 +7961,26 @@ module.exports = {
 			do {
 				j = Math.floor(Math.random() * res.data.length);
 			} while (!("img" in res.data[j]));
-			// console.log(res.data[j]);
+			console.log(res.data[j]);
 			return res.data[j].img;
+		}).catch(function (err) {
+			throw new Error(err);
+		});
+	},
+
+	getSet: function getSet() {
+		var requestUrl = SET_API + "Classic";
+
+		return axios.get(requestUrl, {
+			headers: { "X-Mashape-Key": API_KEY }
+		}).then(function (res) {
+			var cardList = [];
+			for (var i = 0; i < res.data.length; i++) {
+				if ("img" in res.data[i]) {
+					cardList.push(res.data[i]);
+				}
+			}
+			console.log(cardList);
 		}).catch(function (err) {
 			throw new Error(err);
 		});
@@ -12497,10 +12517,15 @@ var _SetOption = __webpack_require__(117);
 
 var _SetOption2 = _interopRequireDefault(_SetOption);
 
+var _HearthstoneAPI = __webpack_require__(65);
+
+var _HearthstoneAPI2 = _interopRequireDefault(_HearthstoneAPI);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CardSet = (0, _createReactClass2.default)({
 	render: function render() {
+		_HearthstoneAPI2.default.getSet();
 		return _react2.default.createElement(
 			'div',
 			{ className: 'set-container' },
