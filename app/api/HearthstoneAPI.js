@@ -1,5 +1,5 @@
 const axios = require('axios');
-const API_KEY = require('./apiKey.js');
+const API_KEY = require('HSAPIKey');
 
 const GET_CARD_API = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/search/";
 const RANDOM_CARD_API = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/"

@@ -19,6 +19,7 @@ module.exports = {
 			CardSet: path.resolve(__dirname, 'app/components/Set.jsx'),
 			SetOption: path.resolve(__dirname, 'app/components/SetOption.jsx'),
 			SetDisplay: path.resolve(__dirname, 'app/components/SetDisplay.jsx'),
+			HSAPIKey: path.resolve(__dirname, 'app/api/apiKey.js'),
 			HearthstoneAPI: path.resolve(__dirname, 'app/api/HearthstoneAPI.js')
 		},
 		extensions: ['*', '.js', '.jsx']
