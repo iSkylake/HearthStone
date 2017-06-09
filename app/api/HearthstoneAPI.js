@@ -46,7 +46,7 @@ module.exports = {
 			do{
 				j = Math.floor(Math.random()*res.data.length);
 			}while(!("img" in res.data[j]));
-			console.log(res.data[j]);
+			// console.log(res.data[j]);
 			return res.data[j].img;
 		}).catch(function(err){
 			throw new Error(err)
@@ -65,7 +65,8 @@ module.exports = {
 					cardList.push(res.data[i]);
 				}
 			}
-			console.log(cardList);
+			return cardList;
+			// console.log(cardList);
 		}).catch(function(err){
 			throw new Error(err)
 		});
