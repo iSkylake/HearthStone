@@ -113,8 +113,12 @@ form button{
 
 #set-list{
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	margin: 20px 0;
+}
+
+#set-list li{
+	margin: 0 20px;
 }
 
 #set-list li button{

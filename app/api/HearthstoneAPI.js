@@ -53,8 +53,8 @@ module.exports = {
 		});
 	},
 
-	getSet: function(){
-		let requestUrl = SET_API + "Classic";
+	getSet: function(setName){
+		let requestUrl = SET_API + setName;
 
 		return axios.get(requestUrl, {
 			headers: {"X-Mashape-Key": API_KEY}

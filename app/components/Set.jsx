@@ -12,41 +12,49 @@ const CardSet = createReactClass({
 		};
 	},
 
+	getSet: function(setName){
+		HearthstoneApiRequest.getSet(setName).then((cardList)=>{
+			this.setState({
+				cardList: cardList
+			});
+		}, (err)=>{
+			alert(err);
+		});
+	},
+
 	render: function(){
-		// let cardList = [];
+		let cardList = this.state.cardList;
 		// console.log(cardList);
 
-		let that = this;
+		// let that = this;
 
-		function callGetSet(){
-			HearthstoneApiRequest.getSet().then((cardList)=>{
-				that.setState({
-					cardList: cardList
-				});
-				// console.log(that.state.cardList);
-			}, (err)=>{
-				alert(err);
-			});
-		};
+		// function callGetSet(){
+		// 	HearthstoneApiRequest.getSet().then((cardList)=>{
+		// 		that.setState({
+		// 			cardList: cardList
+		// 		});
+		// 	}, (err)=>{
+		// 		alert(err);
+		// 	});
+		// };
 
-		if(that.state.cardList.length < 1){
-			callGetSet();
-		}
+		// if(that.state.cardList.length < 1){
+		// 	callGetSet();
+		// }
 
-		function renderSet(){
-			let cardList = that.state.cardList;
-			// console.log(cardList);
-			if(cardList.length > 1){
-				return <SetDisplay cards = {cardList}/>
-			}
-		};
+		// function renderSet(){
+		// 	let cardList = that.state.cardList;
+		// 	if(cardList.length > 1){
+		// 		return <SetDisplay cards = {cardList}/>
+		// 	}
+		// };
 
 		return(
 			<div className='set-container'>
 				<h1>Card Set</h1>
-				<SetOption/>
-				{renderSet()}
-				{/*<SetDisplay cards = {cardList}/>*/}
+				<SetOption onGetSet={this.getSet}/>
+				{/*renderSet()*/}
+				{<SetDisplay cards={cardList}/>}
 			</div>
 		);
 	}
