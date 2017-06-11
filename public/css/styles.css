@@ -104,6 +104,7 @@ form button{
 #card-list{
 	display: flex;
 	flex-wrap: wrap;
+	max-width: 1540px;
 }
 
 #card-list li img{
