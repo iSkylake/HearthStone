@@ -12674,7 +12674,7 @@ var SetOption = (0, _createReactClass2.default)({
 					null,
 					_react2.default.createElement(
 						'button',
-						null,
+						{ onClick: this.onClickSet.bind(this, "Basic") },
 						'Basic'
 					)
 				),
@@ -12692,7 +12692,7 @@ var SetOption = (0, _createReactClass2.default)({
 					null,
 					_react2.default.createElement(
 						'button',
-						null,
+						{ onClick: this.onClickSet.bind(this, "Whispers of the Old Gods") },
 						'Old Gods'
 					)
 				),
@@ -12701,16 +12701,7 @@ var SetOption = (0, _createReactClass2.default)({
 					null,
 					_react2.default.createElement(
 						'button',
-						null,
-						'Gadgetsan'
-					)
-				),
-				_react2.default.createElement(
-					'li',
-					null,
-					_react2.default.createElement(
-						'button',
-						null,
+						{ onClick: this.onClickSet.bind(this, "One Night in Karazhan") },
 						'Karazhan'
 					)
 				),
@@ -12719,7 +12710,16 @@ var SetOption = (0, _createReactClass2.default)({
 					null,
 					_react2.default.createElement(
 						'button',
-						null,
+						{ onClick: this.onClickSet.bind(this, "Mean Streets of Gadgetzan") },
+						'Gadgetsan'
+					)
+				),
+				_react2.default.createElement(
+					'li',
+					null,
+					_react2.default.createElement(
+						'button',
+						{ onClick: this.onClickSet.bind(this, "Journey to Un'Goro") },
 						'Un\'Goro'
 					)
 				)
