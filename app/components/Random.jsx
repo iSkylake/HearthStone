@@ -14,23 +14,27 @@ const Random = createReactClass({
 	getInitialState: function(){
 		return{
 			randomCard: this.props.randomCard,
-			isLoading: false
+			isLoading: false,
+			disable: false
 		}
 	},
 
 	handleCardGen: function(generatedCard){
 		let that = this;
 		this.setState({
-			isLoading: true
+			isLoading: true,
+			disable: true
 		});
 		HearthstoneApiRequest.getRandomCard().then(function(randomCard){
 			that.setState({
 				randomCard: randomCard,
-				isLoading: false
+				isLoading: false,
+				disable: false
 			});
 		}, function(err){
 			that.setState({
-				isLoading: false
+				isLoading: false,
+				disable: false
 			});
 			alert(err);
 		});
@@ -42,6 +46,7 @@ const Random = createReactClass({
 	render: function(){
 		let randomCard = this.state.randomCard;
 		let isLoading = this.state.isLoading;
+		let disable = this.state.disable;
 
 		function renderCard(){
 			let loadingGif = "";
@@ -57,7 +62,7 @@ const Random = createReactClass({
 			<div className="random-container">
 				<h1>Random Card</h1>
 				{renderCard()}
-				<RandomForm onHandleCardGen={this.handleCardGen}/>
+				<RandomForm onHandleCardGen={this.handleCardGen} disable={disable}/>
 			</div>
 		);
 	}

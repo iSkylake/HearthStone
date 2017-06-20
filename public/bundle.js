@@ -805,7 +805,7 @@ module.exports = ExecutionEnvironment;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _prodInvariant = __webpack_require__(20);
+var _prodInvariant = __webpack_require__(21);
 
 var ReactCurrentOwner = __webpack_require__(15);
 
@@ -1635,7 +1635,7 @@ var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(5);
 
 var CallbackQueue = __webpack_require__(79);
-var PooledClass = __webpack_require__(18);
+var PooledClass = __webpack_require__(19);
 var ReactFeatureFlags = __webpack_require__(84);
 var ReactReconciler = __webpack_require__(25);
 var Transaction = __webpack_require__(36);
@@ -1927,7 +1927,7 @@ module.exports = ReactCurrentOwner;
 
 var _assign = __webpack_require__(5);
 
-var PooledClass = __webpack_require__(18);
+var PooledClass = __webpack_require__(19);
 
 var emptyFunction = __webpack_require__(10);
 var warning = __webpack_require__(2);
@@ -2403,6 +2403,31 @@ module.exports = DOMProperty;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+
+
+var React = __webpack_require__(4);
+var factory = __webpack_require__(139);
+
+// Hack to grab NoopUpdateQueue from isomorphic React
+var ReactNoopUpdateQueue = new React.Component().updater;
+
+module.exports = factory(React.Component, React.isValidElement, ReactNoopUpdateQueue);
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2517,7 +2542,7 @@ module.exports = PooledClass;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2866,7 +2891,7 @@ module.exports = ReactElement;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2910,7 +2935,7 @@ function reactProdInvariant(code) {
 module.exports = reactProdInvariant;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2968,31 +2993,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-
-
-var React = __webpack_require__(4);
-var factory = __webpack_require__(139);
-
-// Hack to grab NoopUpdateQueue from isomorphic React
-var ReactNoopUpdateQueue = new React.Component().updater;
-
-module.exports = factory(React.Component, React.isValidElement, ReactNoopUpdateQueue);
 
 /***/ }),
 /* 23 */
@@ -3341,7 +3341,7 @@ var ReactComponent = __webpack_require__(64);
 var ReactPureComponent = __webpack_require__(258);
 var ReactClass = __webpack_require__(254);
 var ReactDOMFactories = __webpack_require__(255);
-var ReactElement = __webpack_require__(19);
+var ReactElement = __webpack_require__(20);
 var ReactPropTypes = __webpack_require__(256);
 var ReactVersion = __webpack_require__(259);
 
@@ -5672,7 +5672,7 @@ var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a
 
 exports.__esModule = true;
 
-var _warning = __webpack_require__(21);
+var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -7540,7 +7540,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _warning = __webpack_require__(21);
+var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -7779,7 +7779,7 @@ exports.default = matchPath;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _prodInvariant = __webpack_require__(20);
+var _prodInvariant = __webpack_require__(21);
 
 var ReactNoopUpdateQueue = __webpack_require__(65);
 
@@ -9215,7 +9215,7 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var PooledClass = __webpack_require__(18);
+var PooledClass = __webpack_require__(19);
 
 var invariant = __webpack_require__(1);
 
@@ -11451,7 +11451,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _warning = __webpack_require__(21);
+var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -11667,7 +11667,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var ReactCurrentOwner = __webpack_require__(15);
 var ReactComponentTreeHook = __webpack_require__(8);
-var ReactElement = __webpack_require__(19);
+var ReactElement = __webpack_require__(20);
 
 var checkReactTypeSpec = __webpack_require__(260);
 
@@ -12196,7 +12196,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(22);
+var _createReactClass = __webpack_require__(18);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
@@ -12224,23 +12224,27 @@ var Random = (0, _createReactClass2.default)({
 	getInitialState: function getInitialState() {
 		return {
 			randomCard: this.props.randomCard,
-			isLoading: false
+			isLoading: false,
+			disable: false
 		};
 	},
 
 	handleCardGen: function handleCardGen(generatedCard) {
 		var that = this;
 		this.setState({
-			isLoading: true
+			isLoading: true,
+			disable: true
 		});
 		_HearthstoneAPI2.default.getRandomCard().then(function (randomCard) {
 			that.setState({
 				randomCard: randomCard,
-				isLoading: false
+				isLoading: false,
+				disable: false
 			});
 		}, function (err) {
 			that.setState({
-				isLoading: false
+				isLoading: false,
+				disable: false
 			});
 			alert(err);
 		});
@@ -12252,6 +12256,7 @@ var Random = (0, _createReactClass2.default)({
 	render: function render() {
 		var randomCard = this.state.randomCard;
 		var isLoading = this.state.isLoading;
+		var disable = this.state.disable;
 
 		function renderCard() {
 			var loadingGif = "";
@@ -12272,7 +12277,7 @@ var Random = (0, _createReactClass2.default)({
 				'Random Card'
 			),
 			renderCard(),
-			_react2.default.createElement(_RandomForm2.default, { onHandleCardGen: this.handleCardGen })
+			_react2.default.createElement(_RandomForm2.default, { onHandleCardGen: this.handleCardGen, disable: disable })
 		);
 	}
 });
@@ -12294,7 +12299,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(22);
+var _createReactClass = __webpack_require__(18);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
@@ -12315,7 +12320,7 @@ var RandomForm = (0, _createReactClass2.default)({
 			{ onSubmit: this.onClickRandom },
 			_react2.default.createElement(
 				'button',
-				null,
+				{ disabled: this.props.disable },
 				'Generate Card'
 			)
 		);
@@ -12339,7 +12344,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(22);
+var _createReactClass = __webpack_require__(18);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
@@ -12442,7 +12447,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(22);
+var _createReactClass = __webpack_require__(18);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
@@ -12506,7 +12511,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(22);
+var _createReactClass = __webpack_require__(18);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
@@ -12602,7 +12607,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(22);
+var _createReactClass = __webpack_require__(18);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
@@ -12647,7 +12652,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = __webpack_require__(22);
+var _createReactClass = __webpack_require__(18);
 
 var _createReactClass2 = _interopRequireDefault(_createReactClass);
 
@@ -12657,8 +12662,6 @@ var SetOption = (0, _createReactClass2.default)({
 	onClickSet: function onClickSet(setName, e) {
 		console.log(arguments);
 		e.preventDefault();
-		// let setName = this.refs.classic.name;
-		// console.log(setName);
 		this.props.onGetSet(setName);
 	},
 
@@ -12727,26 +12730,6 @@ var SetOption = (0, _createReactClass2.default)({
 		);
 	}
 });
-
-// const SetOption = () => {
-// 	onClickSet: function(e, setName){
-// 		e.preventDefault();
-// 		this.props.onGetSet(setName);
-// 	},
-
-// 	return (
-// 		<div>
-// 			<ul id='set-list'>
-// 				<li><button>Basic</button></li>
-// 				<li><button onClick={this.onClickSet("Classic")}>Expert</button></li>
-// 				<li><button>Old Gods</button></li>
-// 				<li><button>Gadgetsan</button></li>
-// 				<li><button>Karazhan</button></li>
-// 				<li><button>Un'Goro</button></li>
-// 			</ul>
-// 		</div>
-// 	);	
-// }
 
 exports.default = SetOption;
 
@@ -16927,7 +16910,7 @@ var _extends = Object.assign || function (target) {
   }return target;
 };
 
-var _warning = __webpack_require__(21);
+var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -17246,7 +17229,7 @@ var _extends = Object.assign || function (target) {
   }return target;
 };
 
-var _warning = __webpack_require__(21);
+var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -17591,7 +17574,7 @@ var _extends = Object.assign || function (target) {
   }return target;
 };
 
-var _warning = __webpack_require__(21);
+var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -19318,7 +19301,7 @@ module.exports = EnterLeaveEventPlugin;
 
 var _assign = __webpack_require__(5);
 
-var PooledClass = __webpack_require__(18);
+var PooledClass = __webpack_require__(19);
 
 var getTextContentAccessor = __webpack_require__(94);
 
@@ -24034,7 +24017,7 @@ var _assign = __webpack_require__(5);
 
 var EventListener = __webpack_require__(72);
 var ExecutionEnvironment = __webpack_require__(7);
-var PooledClass = __webpack_require__(18);
+var PooledClass = __webpack_require__(19);
 var ReactDOMComponentTree = __webpack_require__(6);
 var ReactUpdates = __webpack_require__(14);
 
@@ -24956,7 +24939,7 @@ module.exports = ReactPropTypeLocationNames;
 var _assign = __webpack_require__(5);
 
 var CallbackQueue = __webpack_require__(79);
-var PooledClass = __webpack_require__(18);
+var PooledClass = __webpack_require__(19);
 var ReactBrowserEventEmitter = __webpack_require__(34);
 var ReactInputSelection = __webpack_require__(86);
 var ReactInstrumentation = __webpack_require__(12);
@@ -25235,7 +25218,7 @@ module.exports = ReactRef;
 
 var _assign = __webpack_require__(5);
 
-var PooledClass = __webpack_require__(18);
+var PooledClass = __webpack_require__(19);
 var Transaction = __webpack_require__(36);
 var ReactInstrumentation = __webpack_require__(12);
 var ReactServerUpdateQueue = __webpack_require__(206);
@@ -28458,7 +28441,7 @@ var _propTypes = __webpack_require__(11);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _warning = __webpack_require__(21);
+var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -29134,7 +29117,7 @@ module.exports = KeyEscapeUtils;
 
 
 
-var _prodInvariant = __webpack_require__(20);
+var _prodInvariant = __webpack_require__(21);
 
 var invariant = __webpack_require__(1);
 
@@ -29252,7 +29235,7 @@ module.exports = PooledClass;
 
 
 var PooledClass = __webpack_require__(252);
-var ReactElement = __webpack_require__(19);
+var ReactElement = __webpack_require__(20);
 
 var emptyFunction = __webpack_require__(10);
 var traverseAllChildren = __webpack_require__(263);
@@ -29448,11 +29431,11 @@ module.exports = ReactChildren;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _prodInvariant = __webpack_require__(20),
+var _prodInvariant = __webpack_require__(21),
     _assign = __webpack_require__(5);
 
 var ReactComponent = __webpack_require__(64);
-var ReactElement = __webpack_require__(19);
+var ReactElement = __webpack_require__(20);
 var ReactPropTypeLocationNames = __webpack_require__(103);
 var ReactNoopUpdateQueue = __webpack_require__(65);
 
@@ -30176,7 +30159,7 @@ module.exports = ReactClass;
 
 
 
-var ReactElement = __webpack_require__(19);
+var ReactElement = __webpack_require__(20);
 
 /**
  * Create a factory that creates HTML tag elements.
@@ -30352,7 +30335,7 @@ module.exports = ReactDOMFactories;
 
 
 
-var _require = __webpack_require__(19),
+var _require = __webpack_require__(20),
     isValidElement = _require.isValidElement;
 
 var factory = __webpack_require__(76);
@@ -30466,7 +30449,7 @@ module.exports = '15.5.4';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _prodInvariant = __webpack_require__(20);
+var _prodInvariant = __webpack_require__(21);
 
 var ReactPropTypeLocationNames = __webpack_require__(103);
 var ReactPropTypesSecret = __webpack_require__(257);
@@ -30584,9 +30567,9 @@ module.exports = getNextDebugID;
  */
 
 
-var _prodInvariant = __webpack_require__(20);
+var _prodInvariant = __webpack_require__(21);
 
-var ReactElement = __webpack_require__(19);
+var ReactElement = __webpack_require__(20);
 
 var invariant = __webpack_require__(1);
 
@@ -30631,7 +30614,7 @@ module.exports = onlyChild;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _prodInvariant = __webpack_require__(20);
+var _prodInvariant = __webpack_require__(21);
 
 var ReactCurrentOwner = __webpack_require__(15);
 var REACT_ELEMENT_TYPE = __webpack_require__(101);

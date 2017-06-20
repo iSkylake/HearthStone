@@ -21,7 +21,7 @@ const RandomForm = createReactClass({
 	render: function(){
 		return(
 			<form onSubmit={this.onClickRandom}>
-				<button>Generate Card</button>
+				<button disabled={this.props.disable}>Generate Card</button>
 			</form>
 		);
 	}
