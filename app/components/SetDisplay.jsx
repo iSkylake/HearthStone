@@ -6,7 +6,10 @@ const SetDisplay = (cards) =>{
 	// console.log(cards["cards"]);
 	let newCards = cards['cards'];
 	const cardList = newCards.map((card)=>
-		<li key={card['cardId']}><img src={card['img']}/></li>
+		<li key={card['cardId']}>
+			<img src={card['img']}/>
+		{/*<p>{card["name"]}</p>*/}
+		</li>
 	);
 	return(
 		<div>

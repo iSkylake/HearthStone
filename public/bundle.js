@@ -5398,13 +5398,14 @@ module.exports = {
 
 	getSet: function getSet(setName) {
 		var requestUrl = SET_API + setName;
+		var excludeCards = ["Anduin Wrynn", "Frog", "Garrosh Hellscream", "Gul'dan", "Jaina Proudmoore", "Malfurion Stormrage", "Rexxar", "Thrall", "Uther Lightbringer", "Valeera Sanguinar", "Avatar of the Coin", "Excess Mana", "Mechanical Dragonling", "Sheep", "Silver Hand Recruit", "Wicked Knife", "Wicked Knife", "Skeleton", "Stoneclaw Totem", "Wrath of Air Totem", "Armor Up!", "Dagger Master", "Dagger Mastery", "Fireblast", "Lesser Heal", "Life Tap", "NOOOOOOOOOOOO", "Reinforce", "Shapeshift", "Steady Shot", "Totemic Call"];
 
 		return axios.get(requestUrl, {
 			headers: { "X-Mashape-Key": API_KEY }
 		}).then(function (res) {
 			var cardList = [];
 			for (var i = 0; i < res.data.length; i++) {
-				if ("img" in res.data[i]) {
+				if ("img" in res.data[i] && !excludeCards.includes(res.data[i]["name"])) {
 					cardList.push(res.data[i]);
 				}
 			}
