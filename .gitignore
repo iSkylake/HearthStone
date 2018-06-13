@@ -1,2 +1,4 @@
 node_modules/
 app/api/apiKey.js
+.DS_Store
+public/.DS_Store

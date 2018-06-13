@@ -48,13 +48,15 @@ h1{
 }
 
 #app{
-	background-color: #ebd19e;
+	background: url("../img/Skin-Content-Background.jpg");
+	/*background-color: #ebd19e;*/
 	width: 100%;
 	height: 100%;
 }
 
 #app div{
-	background-color: #ebd19e;
+	background: url("../img/Skin-Content-Background.jpg")
+	/*background-color: #ebd19e;*/
 }
 
 .main-container{
