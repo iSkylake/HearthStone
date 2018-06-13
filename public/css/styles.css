@@ -55,8 +55,7 @@ h1{
 }
 
 #app div{
-	background: url("../img/Skin-Content-Background.jpg")
-	/*background-color: #ebd19e;*/
+	background-color: transparent;
 }
 
 .main-container{
